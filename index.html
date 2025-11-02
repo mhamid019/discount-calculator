@@ -16,8 +16,8 @@
     a {text-decoration: none; padding: 0;}
     html {font: 15px system-ui, sans-serif;}
     body {
-        background: rgb(161, 175, 176);
-        max-height: 100vh;
+        background: rgb(127, 141, 161);
+        height: 100vh;
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
@@ -27,7 +27,7 @@
     .btn {
         display: inline-block;
         padding: 0.5rem 1rem;
-        background: #ba0956;
+        background: #f13d8b;
         color: #fef;
         border: none;
         border-radius: 5px;
@@ -39,10 +39,10 @@
         width: 280px;
         min-height: 292px;
         padding: 1rem;
-        background: rgb(196, 214, 196);
+        background: rgb(241, 247, 241);
         text-align: center;
         border-radius: 4px;
-        box-shadow: 0 0 10px #979c97;
+        box-shadow: 0 0 10px #747874;
         color: #6b6464;
     }
 
@@ -59,6 +59,7 @@
     
     .container .result {display: none; padding: 10px 0;}
     .container p {font-weight: 500; color: rgb(49, 49, 52);}
+
 </style>
 
 <body>
@@ -67,7 +68,7 @@
         <h3 style="margin: 1rem 0 1.5rem;">Discount Calculator</h3>
         <form>
             <input type="number" id="p-amnt" required placeholder="Enter amount" autofocus>
-            <input type="number" id="rate" required placeholder="Discount">
+            <input type="number" id="rate" required placeholder="Enter rate">
             <button class="btn">Calculate</button>
         </form>
         <div class="result">
@@ -102,8 +103,12 @@
             document.querySelector(".result #final-price").textContent = finalAmnt.toFixed(2);
             
             document.querySelector(".result").style.display = "block";
-
         }
+
+        calcForm.querySelector("input").addEventListener("input", function() {
+            document.querySelector(".result").style.display = "none";
+        });
+        
     </script>                                                
 
 </body>
