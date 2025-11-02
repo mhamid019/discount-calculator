@@ -17,7 +17,7 @@
     html {font: 15px system-ui, sans-serif;}
     body {
         background: rgb(161, 175, 176);
-        min-height: 100vh;
+        max-height: 100vh;
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
@@ -79,7 +79,6 @@
 
                                                 <!-- script -->
 
-               
     <script>
 
         const calcForm = document.querySelector("form");
@@ -91,6 +90,9 @@
             const rate = document.querySelector("form #rate").valueAsNumber;
             if(pAmnt < 0 || rate < 0) {
                 alert("Value must be greater than or equal to 0");
+                document.querySelector("form #p-amnt").value = "";
+                document.querySelector("form #rate").value = "";
+                pAmnt.focus();
                 return;
             }
         
